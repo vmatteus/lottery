@@ -1,5 +1,9 @@
 # Setup Lottery - Api
 
+### Postman com os endpoints
+
+https://documenter.getpostman.com/view/2066044/UV5afvST
+
 ### Pré-requisitos:
 Para trabalhar nesse projeto você ira precisar instalar:
      
