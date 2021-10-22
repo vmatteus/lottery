@@ -1,14 +1,14 @@
 version: '2'
 services:
-    base-api:
-        container_name: base-api
+    lottery:
+        container_name: lottery
         build: ./docker
         volumes: 
-          - ./src:/opt/base-api/src
+          - ./src:/opt/lottery/src
         expose: 
           - "8000"
         ports:
-          - "10080:8000"
+          - "8080:8000"
         command:
           bash -c "composer install && php artisan serve --host=0.0.0.0 --port=8000"
         networks: 
