@@ -52,12 +52,15 @@ class Lottery
         return $num_round;
     }
 
-    private function tensToGame() {
+    private function tensToGame($tens=null) {
 
+        if (is_null($tens)) {
+            $tens = $this->getTens();
+        }
 
         $raffle = [];  
 
-        for ($i = 1; $i <= $this->getTens(); $i++) {
+        for ($i = 1; $i <= $tens; $i++) {
             $num_round = $this->rand60();
 
             while(in_array($num_round, $raffle)) {
@@ -83,7 +86,7 @@ class Lottery
     }
 
     public function sortResult() {
-        $this->setResult($this->tensToGame());
+        $this->setResult($this->tensToGame(6));
     }
 
     public function checkResult() {
