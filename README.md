@@ -15,7 +15,7 @@ Para trabalhar nesse projeto você ira precisar instalar:
 
     Subindo ambiente
         sudo docker-compose build
-        sudo docker-compose up -d
+        sudo docker-compose up
 
     Entrando no ambiente docker:
         sudo docker exec -it lottery-api bash // ou nome do repositorio escolhido
