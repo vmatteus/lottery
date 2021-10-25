@@ -58,7 +58,13 @@ class Lottery
             $tens = $this->getTens();
         }
 
-        $raffle = array_rand($this->numbers_01_60, $tens);  
+        array_rand($this->numbers_01_60, $tens);
+
+        $raffle = array_rand($this->numbers_01_60, $tens);
+
+        foreach($raffle as $raffle_gey => $key) {
+            $raffle[$raffle_gey] = $this->numbers_01_60[$key];
+        }
 
         sort($raffle);
 
