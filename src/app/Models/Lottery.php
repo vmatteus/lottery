@@ -58,8 +58,6 @@ class Lottery
             $tens = $this->getTens();
         }
 
-        array_rand($this->numbers_01_60, $tens);
-
         $raffle = array_rand($this->numbers_01_60, $tens);
 
         foreach($raffle as $raffle_gey => $key) {
