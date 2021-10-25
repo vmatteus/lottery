@@ -8,6 +8,12 @@ class Lottery
     private $result;
     private $game_totals;
     private $games;
+    private $numbers_01_60 = [
+        '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18',
+        '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36',
+        '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54',
+        '55', '56', '57', '58', '59', '60'
+    ];
 
     public function __construct($tens, $game_totals)
     {
@@ -46,28 +52,13 @@ class Lottery
         return $this->games;
     }
 
-    private function rand60() {
-        $num_round = rand(1, 60);
-        $num_round = str_pad((string) $num_round, 2, '0', STR_PAD_LEFT);
-        return $num_round;
-    }
-
     private function tensToGame($tens=null) {
 
         if (is_null($tens)) {
             $tens = $this->getTens();
         }
 
-        $raffle = [];  
-
-        for ($i = 1; $i <= $tens; $i++) {
-            $num_round = $this->rand60();
-
-            while(in_array($num_round, $raffle)) {
-                $num_round = $this->rand60();
-            }
-            $raffle[] = $num_round;  
-        }
+        $raffle = array_rand($this->numbers_01_60, $tens);  
 
         sort($raffle);
 
